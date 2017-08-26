@@ -38,6 +38,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
     fileprivate let pagingDataSource: GalleryPagingDataSource
 
     // CONFIGURATION
+    fileprivate var tapDismiss:                Bool = false
     fileprivate var spineDividerWidth:         Float = 10
     fileprivate var galleryPagingMode = GalleryPagingMode.standard
     fileprivate var headerLayout = HeaderLayout.center(25)
@@ -79,7 +80,8 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         for item in configuration {
 
             switch item {
-
+            case .tapDismiss(let dismiss):
+                tapDismiss = dismiss
             case .imageDividerWidth(let width):                 spineDividerWidth = Float(width)
             case .pagingMode(let mode):                         galleryPagingMode = mode
             case .headerViewLayout(let layout):                 headerLayout = layout
@@ -206,7 +208,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
     fileprivate func configureFooterView() {
 
         if let footer = footerView {
-            footer.alpha = 0
+            footer.alpha = tapDismiss ? 1 : 0
             self.view.addSubview(footer)
         }
     }
@@ -648,7 +650,10 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
     }
 
     open func itemControllerDidSingleTap(_ controller: ItemController) {
-
+        guard !tapDismiss else {
+            dismiss(animated: false, completion: nil)
+            return
+        }
         self.decorationViewsHidden.flip()
         animateDecorationViews(visible: !self.decorationViewsHidden)
     }

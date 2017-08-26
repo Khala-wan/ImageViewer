@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     func galleryConfiguration() -> GalleryConfiguration {
 
         return [
-
+            GalleryConfigurationItem.tapDismiss(true),
             GalleryConfigurationItem.closeButtonMode(.builtIn),
 
             GalleryConfigurationItem.pagingMode(.standard),
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             GalleryConfigurationItem.hideDecorationViewsOnLaunch(false),
 
             GalleryConfigurationItem.swipeToDismissMode(.vertical),
-            GalleryConfigurationItem.toggleDecorationViewsBySingleTap(false),
+            GalleryConfigurationItem.toggleDecorationViewsBySingleTap(true),
 
             GalleryConfigurationItem.overlayColor(UIColor(white: 0.035, alpha: 1)),
             GalleryConfigurationItem.overlayColorOpacity(1),

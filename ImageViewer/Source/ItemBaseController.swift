@@ -142,17 +142,14 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         doubleTapRecognizer.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTapRecognizer)
 
-        if toggleDecorationViewBySingleTap == true {
-
-            let singleTapRecognizer = UITapGestureRecognizer()
-
-            singleTapRecognizer.addTarget(self, action: #selector(scrollViewDidSingleTap))
-            singleTapRecognizer.numberOfTapsRequired = 1
-            scrollView.addGestureRecognizer(singleTapRecognizer)
-            singleTapRecognizer.require(toFail: doubleTapRecognizer)
-
-            self.singleTapRecognizer = singleTapRecognizer
-        }
+        let singleTapRecognizer = UITapGestureRecognizer()
+        
+        singleTapRecognizer.addTarget(self, action: #selector(scrollViewDidSingleTap))
+        singleTapRecognizer.numberOfTapsRequired = 1
+        scrollView.addGestureRecognizer(singleTapRecognizer)
+        singleTapRecognizer.require(toFail: doubleTapRecognizer)
+        
+        self.singleTapRecognizer = singleTapRecognizer
 
         if swipeToDismissMode != .never {
 
