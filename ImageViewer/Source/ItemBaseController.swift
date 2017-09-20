@@ -248,12 +248,12 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         itemView.center = contentCenter(forBoundingSize: scrollView.bounds.size, contentSize: scrollView.contentSize)
     }
 
-    func scrollViewDidSingleTap() {
+    @objc func scrollViewDidSingleTap() {
 
         self.delegate?.itemControllerDidSingleTap(self)
     }
 
-    func scrollViewDidDoubleTap(_ recognizer: UITapGestureRecognizer) {
+    @objc func scrollViewDidDoubleTap(_ recognizer: UITapGestureRecognizer) {
 
         let touchPoint = recognizer.location(ofTouch: 0, in: itemView)
         let aspectFillScale = aspectFillZoomScale(forBoundingSize: scrollView.bounds.size, contentSize: itemView.bounds.size)
@@ -275,7 +275,7 @@ open class ItemBaseController<T: UIView>: UIViewController, ItemController, UIGe
         }
     }
 
-    func scrollViewDidSwipeToDismiss(_ recognizer: UIPanGestureRecognizer) {
+    @objc func scrollViewDidSwipeToDismiss(_ recognizer: UIPanGestureRecognizer) {
 
         /// A deliberate UX decision...you have to zoom back in to scale 1 to be able to swipe to dismiss. It is difficult for the user to swipe to dismiss from images larger then screen bounds because almost all the time it's not swiping to dismiss but instead panning a zoomed in picture on the canvas.
         guard scrollView.zoomScale == scrollView.minimumZoomScale else { return }

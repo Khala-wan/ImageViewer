@@ -8,8 +8,6 @@
 
 import UIKit
 
-extension UIImageView: DisplaceableView {}
-
 struct DataItem {
 
     let imageView: UIImageView
@@ -75,7 +73,7 @@ class ViewController: UIViewController {
         let headerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
         let footerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
 
-        let galleryViewController = GalleryViewController(startIndex: displacedViewIndex, itemsDataSource: self, itemsDelegate: self, displacedViewsDataSource: self, configuration: galleryConfiguration())
+        let galleryViewController = GalleryViewController(startIndex: displacedViewIndex, itemsDataSource: self, itemsDelegate: self, displacedViewsDataSource: nil, configuration: galleryConfiguration())
         galleryViewController.headerView = headerView
         galleryViewController.footerView = footerView
 
@@ -147,13 +145,13 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: GalleryDisplacedViewsDataSource {
-
-    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
-
-        return index < items.count ? items[index].imageView : nil
-    }
-}
+//extension ViewController: GalleryDisplacedViewsDataSource {
+//
+//    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
+//
+//        return items[index].imageView
+//    }
+//}
 
 extension ViewController: GalleryItemsDataSource {
 
