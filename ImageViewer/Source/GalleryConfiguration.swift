@@ -11,7 +11,8 @@ import UIKit
 public typealias GalleryConfiguration = [GalleryConfigurationItem]
 
 public enum GalleryConfigurationItem {
-
+    
+    /// tap to dismiss
     case tapDismiss(Bool)
     /// Allows to stop paging at the beginning and the end of item list or page infinitely in a "carousel" like mode.
     case pagingMode(GalleryPagingMode)
