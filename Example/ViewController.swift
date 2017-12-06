@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         let footerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
 
         let galleryViewController = GalleryViewController(startIndex: displacedViewIndex, itemsDataSource: self, itemsDelegate: self, displacedViewsDataSource: nil, configuration: galleryConfiguration())
-        galleryViewController.headerView = headerView
+//        galleryViewController.headerView = headerView
         galleryViewController.footerView = footerView
 
         galleryViewController.launchedCompletion = { print("LAUNCHED") }
@@ -97,48 +97,50 @@ class ViewController: UIViewController {
     func galleryConfiguration() -> GalleryConfiguration {
 
         return [
-            GalleryConfigurationItem.tapDismiss(true),
-            GalleryConfigurationItem.closeButtonMode(.builtIn),
-
+            GalleryConfigurationItem.hzfHeader(UIColor.black, "聂伟傻逼", UIImage(named: "arrow_left_white")!),
+            GalleryConfigurationItem.closeButtonMode(.none),
+            GalleryConfigurationItem.seeAllCloseButtonMode(.none),
+            GalleryConfigurationItem.deleteButtonMode(.none),
+            GalleryConfigurationItem.thumbnailsButtonMode(.none),
             GalleryConfigurationItem.pagingMode(.standard),
-            GalleryConfigurationItem.presentationStyle(.displacement),
+            GalleryConfigurationItem.presentationStyle(.fade),
             GalleryConfigurationItem.hideDecorationViewsOnLaunch(false),
-
+            
             GalleryConfigurationItem.swipeToDismissMode(.vertical),
             GalleryConfigurationItem.toggleDecorationViewsBySingleTap(true),
-
+            
             GalleryConfigurationItem.overlayColor(UIColor(white: 0.035, alpha: 1)),
             GalleryConfigurationItem.overlayColorOpacity(1),
             GalleryConfigurationItem.overlayBlurOpacity(1),
             GalleryConfigurationItem.overlayBlurStyle(UIBlurEffectStyle.light),
             
             GalleryConfigurationItem.videoControlsColor(.white),
-
+            
             GalleryConfigurationItem.maximumZoomScale(8),
             GalleryConfigurationItem.swipeToDismissThresholdVelocity(500),
-
+            
             GalleryConfigurationItem.doubleTapToZoomDuration(0.15),
-
+            
             GalleryConfigurationItem.blurPresentDuration(0.5),
             GalleryConfigurationItem.blurPresentDelay(0),
             GalleryConfigurationItem.colorPresentDuration(0.25),
             GalleryConfigurationItem.colorPresentDelay(0),
-
+            
             GalleryConfigurationItem.blurDismissDuration(0.1),
             GalleryConfigurationItem.blurDismissDelay(0.4),
             GalleryConfigurationItem.colorDismissDuration(0.45),
             GalleryConfigurationItem.colorDismissDelay(0),
-
+            
             GalleryConfigurationItem.itemFadeDuration(0.3),
             GalleryConfigurationItem.decorationViewsFadeDuration(0.15),
             GalleryConfigurationItem.rotationDuration(0.15),
-
+            
             GalleryConfigurationItem.displacementDuration(0.55),
             GalleryConfigurationItem.reverseDisplacementDuration(0.25),
             GalleryConfigurationItem.displacementTransitionStyle(.springBounce(0.7)),
             GalleryConfigurationItem.displacementTimingCurve(.linear),
-
-            GalleryConfigurationItem.statusBarHidden(true),
+            
+            GalleryConfigurationItem.statusBarHidden(false),
             GalleryConfigurationItem.displacementKeepOriginalInPlace(false),
             GalleryConfigurationItem.displacementInsetMargin(50)
         ]

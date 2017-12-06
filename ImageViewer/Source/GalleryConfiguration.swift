@@ -12,6 +12,9 @@ public typealias GalleryConfiguration = [GalleryConfigurationItem]
 
 public enum GalleryConfigurationItem {
     
+    /// defualt Header bgColor title imgName
+    case hzfHeader(UIColor,String,UIImage)
+    
     /// tap to dismiss
     case tapDismiss(Bool)
     /// Allows to stop paging at the beginning and the end of item list or page infinitely in a "carousel" like mode.

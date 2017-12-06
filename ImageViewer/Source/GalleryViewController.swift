@@ -80,6 +80,9 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         for item in configuration {
 
             switch item {
+            case .hzfHeader(let bgColor, let title, let img):
+            let view: HzfHeaderView = HzfHeaderView.with(bgColor, title, img)
+            headerView = view
             case .tapDismiss(let dismiss):
                 tapDismiss = dismiss
             case .imageDividerWidth(let width):                 spineDividerWidth = Float(width)
@@ -155,6 +158,10 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
                    options: [UIPageViewControllerOptionInterPageSpacingKey : NSNumber(value: spineDividerWidth as Float)])
 
         pagingDataSource.itemControllerDelegate = self
+        
+        if let myheader: HzfHeaderView = headerView as? HzfHeaderView {
+            myheader.backBtn.addTarget(self, action: #selector(GalleryViewController.closeInteractively), for: .touchUpInside)
+        }
 
         ///This feels out of place, one would expect even the first presented(paged) item controller to be provided by the paging dataSource but there is nothing we can do as Apple requires the first controller to be set via this "setViewControllers" method.
         let initialController = pagingDataSource.createItemController(startIndex, isInitial: true)

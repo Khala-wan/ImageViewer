@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		13BDF0711E573C78009C458F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDF0701E573C78009C458F /* UIColor.swift */; };
 		13BDF0721E573D10009C458F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDF0701E573C78009C458F /* UIColor.swift */; };
+		20A233AC1FD7A0F70098B31B /* HzfHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A233AB1FD7A0F70098B31B /* HzfHeaderView.swift */; };
+		20A233AD1FD7A50E0098B31B /* HzfHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A233AB1FD7A0F70098B31B /* HzfHeaderView.swift */; };
 		4CD1C49C1C16FF64008D5F84 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1C49B1C16FF64008D5F84 /* CGPoint.swift */; };
 		4CD1C49D1C16FF64008D5F84 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD1C49B1C16FF64008D5F84 /* CGPoint.swift */; };
 		5AF0E6605E3B055280A902DF /* GalleryItemsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0EF3CAFE8B7972354F05D /* GalleryItemsDelegate.swift */; };
@@ -93,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		13BDF0701E573C78009C458F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		20A233AB1FD7A0F70098B31B /* HzfHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HzfHeaderView.swift; sourceTree = "<group>"; };
 		4CD1C49B1C16FF64008D5F84 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		5AF0EF3CAFE8B7972354F05D /* GalleryItemsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryItemsDelegate.swift; sourceTree = "<group>"; };
 		A32D40031D45C4DE00AB5ADA /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				EBBFCB961D26CBA2007E7244 /* BlurView.swift */,
+				20A233AB1FD7A0F70098B31B /* HzfHeaderView.swift */,
 				EB1F6E181C908DDF0046A7FB /* Configuration */,
 				C7DABE5D1C12275C00F5BD7B /* Extensions */,
 				EBA90E421C875225000AA697 /* ImageFadeInHandler.swift */,
@@ -520,6 +524,7 @@
 				EB3464F51D4BAA19009494B5 /* UISlider.swift in Sources */,
 				EBA8CB341D38E51500545E5B /* BlurView.swift in Sources */,
 				EBA0A9531C89C653005B8DD3 /* GalleryConfiguration.swift in Sources */,
+				20A233AD1FD7A50E0098B31B /* HzfHeaderView.swift in Sources */,
 				EB3464F01D4B9066009494B5 /* CALayer.swift in Sources */,
 				EB17B3811D4A6E7F00EED1DA /* UIButton.swift in Sources */,
 				EB1DB6E61D3E500B00DC9064 /* UIImageView.swift in Sources */,
@@ -559,6 +564,7 @@
 			files = (
 				C2573FA81DA6FED600DABB1E /* ThumbnailsViewController.swift in Sources */,
 				EB1CEC221C84A64100BB27B8 /* UIView.swift in Sources */,
+				20A233AC1FD7A0F70098B31B /* HzfHeaderView.swift in Sources */,
 				EBE627131D268AB70095999A /* GalleryItem.swift in Sources */,
 				C2573FA71DA6FED600DABB1E /* ThumbnailCell.swift in Sources */,
 				EB1DB6ED1D3E74A000DC9064 /* CGRect.swift in Sources */,
