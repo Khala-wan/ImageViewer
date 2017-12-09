@@ -78,10 +78,10 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
 
         ///Only those options relevant to the paging GalleryViewController are explicitly handled here, the rest is handled by ItemViewControllers
         for item in configuration {
-
             switch item {
             case .hzfHeader(let bgColor, let title, let img):
             let view: HzfHeaderView = HzfHeaderView.with(bgColor, title, img)
+            headerLayout = .center(-20)
             headerView = view
             case .tapDismiss(let dismiss):
                 tapDismiss = dismiss
@@ -252,6 +252,8 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         scrubber.alpha = 0
         self.view.addSubview(scrubber)
     }
+    
+    
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -262,7 +264,6 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         configureThumbnailsButton()
         configureDeleteButton()
         configureScrubber()
-
         self.view.clipsToBounds = false
     }
 
@@ -279,7 +280,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
 
         initialPresentationDone = true
     }
-
+    
     fileprivate func presentInitially() {
 
         isAnimating = true
@@ -597,9 +598,8 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
     fileprivate func animateDecorationViews(visible: Bool) {
 
         let targetAlpha: CGFloat = (visible) ? 1 : 0
-
         UIView.animate(withDuration: decorationViewsFadeDuration, animations: { [weak self] in
-
+            
             self?.headerView?.alpha = targetAlpha
             self?.footerView?.alpha = targetAlpha
             self?.closeButton?.alpha = targetAlpha

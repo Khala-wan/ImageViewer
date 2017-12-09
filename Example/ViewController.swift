@@ -62,6 +62,12 @@ class ViewController: UIViewController {
             items.append(DataItem(imageView: imageView, galleryItem: galleryItem))
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        get{
+            return .lightContent
+        }
+    }
 
     @IBAction func showGalleryImageViewer(_ sender: UITapGestureRecognizer) {
 

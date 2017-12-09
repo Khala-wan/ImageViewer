@@ -12,7 +12,7 @@ class HzfHeaderView: UIView {
 
 //MARK: ---- lift cycle
     static func with(_ bgColor: UIColor, _ title: String, _ img: UIImage)-> HzfHeaderView {
-        let view: HzfHeaderView = HzfHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64))
+        let view: HzfHeaderView = HzfHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 74))
         view.backgroundColor = bgColor
         view.titleLabel.text = title
         view.backBtn.setImage(img, for: .normal)
@@ -39,7 +39,7 @@ class HzfHeaderView: UIView {
 
 //MARK: ---- getter && setter
     fileprivate lazy var titleLabel: UILabel = {
-        let view: UILabel = UILabel(frame: CGRect(x: 0, y: 10, width: 74, height: 25))
+        let view: UILabel = UILabel(frame: CGRect(x: 0, y: 40, width: 74, height: 25))
         view.center.x = bounds.size.width * 0.5
         view.textColor = UIColor.white
         if #available(iOS 8.2, *){
@@ -51,7 +51,7 @@ class HzfHeaderView: UIView {
     }()
     
     lazy var backBtn: UIButton = {
-        let view: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        let view: UIButton = UIButton(frame: CGRect(x: 0, y: 30, width: 44, height: 44))
         return view
     }()
 }
