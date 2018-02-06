@@ -395,7 +395,6 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
 
             footer.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
             footer.frame.size.width = self.view.bounds.width - marginLeft - marginRight
-            footer.sizeToFit()
             footer.frame.origin = CGPoint(x: marginLeft, y: self.view.bounds.height - footer.bounds.height - marginBottom)
 
         case .pinLeft(let marginBottom, let marginLeft):
