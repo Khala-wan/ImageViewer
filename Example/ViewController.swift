@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         let frame = CGRect(x: 0, y: 0, width: 200, height: 24)
         let headerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
         let footerView = CounterView(frame: frame, currentIndex: displacedViewIndex, count: items.count)
+        footerView.backgroundColor = UIColor.red
 
         let galleryViewController = GalleryViewController(startIndex: displacedViewIndex, itemsDataSource: self, itemsDelegate: self, displacedViewsDataSource: nil, configuration: galleryConfiguration())
 //        galleryViewController.headerView = headerView
@@ -93,8 +94,8 @@ class ViewController: UIViewController {
 
             headerView.count = self.items.count
             headerView.currentIndex = index
-            footerView.count = self.items.count
-            footerView.currentIndex = index
+//            footerView.count = self.items.count
+//            footerView.currentIndex = index
         }
 
         self.presentImageGallery(galleryViewController)
@@ -103,6 +104,7 @@ class ViewController: UIViewController {
     func galleryConfiguration() -> GalleryConfiguration {
 
         return [
+            GalleryConfigurationItem.tapDismiss(true),
             GalleryConfigurationItem.hzfHeader(UIColor.black, "聂伟傻逼", UIImage(named: "arrow_left_white")!),
             GalleryConfigurationItem.closeButtonMode(.none),
             GalleryConfigurationItem.seeAllCloseButtonMode(.none),
@@ -148,7 +150,8 @@ class ViewController: UIViewController {
             
             GalleryConfigurationItem.statusBarHidden(false),
             GalleryConfigurationItem.displacementKeepOriginalInPlace(false),
-            GalleryConfigurationItem.displacementInsetMargin(50)
+            GalleryConfigurationItem.displacementInsetMargin(50),
+            GalleryConfigurationItem.footerViewLayout(FooterLayout.pinBoth(0, 0, 0))
         ]
     }
 }
